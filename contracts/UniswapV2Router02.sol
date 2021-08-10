@@ -59,9 +59,10 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
             }
         }
     }
-    function test() external returns(address) {
+    function test(address tokenA, address tokenB) external returns(address, address) {
         address res = IUniswapV2Factory(factory).allPairs(1);
-        return res;
+        address pair_k = IUniswapV2Factory(factory).createPair(tokenA, tokenB);
+        return (res, pair_k);
     }
     function addLiquidity(
         address tokenA,
