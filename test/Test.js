@@ -1,4 +1,4 @@
-// ganache-cli --fork https://rinkeby.infura.io/v3/b8a10907bdda41c6ac713b5efc0257ee --network development --allowUnlimitedContractSize
+// ganache-cli --fork https://rinkeby.infura.io/v3/b8a10907bdda41c6ac713b5efc0257ee --allowUnlimitedContractSize
 require('chai')
     .use(require('chai-as-promised'))
     .should()
@@ -22,7 +22,7 @@ contract('Router Contract', (accounts) => {
     //     console.log(res)
     // })
     it('factory test', async() => {
-        res = await router.test()
+        res = await router.test.call()
         console.log(res)
     })
     it('add liquidity', async() => {

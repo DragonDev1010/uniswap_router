@@ -59,8 +59,8 @@ contract UniswapV2Router02 is IUniswapV2Router02 {
             }
         }
     }
-    function test() external returns(uint) {
-        uint res = IUniswapV2Factory(factory).allPairsLength();
+    function test() external returns(address) {
+        address res = IUniswapV2Factory(factory).allPairs(1);
         return res;
     }
     function addLiquidity(
